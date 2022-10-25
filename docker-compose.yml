@@ -1,0 +1,33 @@
+version: "2.2"
+
+services:
+  gtt-frontend:
+    build: ./frontend
+    container_name: gtt-frontend
+    ports:
+      - "8423:80"
+    networks:
+      - gtt-internal
+  gtt-mariadb:
+    build: ./mariadb
+    container_name: gtt-mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: DockerInternal
+    networks:
+      - gtt-internal
+    volumes:
+      - db-data:/var/lib/mysql
+
+  gtt-backend:
+    build: ./backend
+    container_name: gtt-backend
+    networks:
+      - gtt-internal
+
+
+networks:
+  gtt-internal:
+    driver: bridge
+
+volumes:
+  db-data:
