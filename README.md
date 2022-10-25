@@ -6,7 +6,7 @@ It does not mess on host. (usualy)
 You must have docker (with compose) installed. Most images are based on alpine so you should use linux as host.
 
 ## Running it
-Simply clone this repo and run:\
+Clone this repository, rename a copy of .env-template, change secretPassword to something safe, and run:\
 `sudo docker compose build`\
 `sudo docker compose up -d`\
 

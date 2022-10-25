@@ -1,6 +1,7 @@
+from os import environ
 config = {
     "user": "root",
-    "password": "DockerInternal",
+    "password": environ["DBPass"],
     "host": "gtt-mariadb",
     "database": "gttournament"
 }

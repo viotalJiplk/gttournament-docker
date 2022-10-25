@@ -12,7 +12,7 @@ services:
     build: ./mariadb
     container_name: gtt-mariadb
     environment:
-      MARIADB_ROOT_PASSWORD: DockerInternal
+      MARIADB_ROOT_PASSWORD: "$DBPass"
     networks:
       - gtt-internal
     volumes:
@@ -23,6 +23,8 @@ services:
     container_name: gtt-backend
     networks:
       - gtt-internal
+    environment:
+      DBPass: "$DBPass"
 
 
 networks:
