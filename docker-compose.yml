@@ -25,7 +25,12 @@ services:
       - gtt-internal
     environment:
       DBPass: "$DBPass"
-
+  gtt-adminer:
+    image: adminer
+    networks:
+      - gtt-internal
+    ports:
+      - 8080:8080
 
 networks:
   gtt-internal:
