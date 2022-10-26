@@ -3,6 +3,7 @@ version: "2.2"
 services:
   gtt-frontend:
     build: ./frontend
+    restart: $restart
     container_name: gtt-frontend
     ports:
       - "$Port:80"
@@ -10,6 +11,7 @@ services:
       - gtt-internal
   gtt-mariadb:
     build: ./mariadb
+    restart: $restart
     container_name: gtt-mariadb
     environment:
       MARIADB_ROOT_PASSWORD: "$DBPass"
@@ -20,6 +22,7 @@ services:
 
   gtt-backend:
     build: ./backend
+    restart: $restart
     container_name: gtt-backend
     networks:
       - gtt-internal
@@ -27,6 +30,7 @@ services:
       DBPass: "$DBPass"
   gtt-adminer:
     image: adminer
+    restart: $restart
     networks:
       - gtt-internal
 
