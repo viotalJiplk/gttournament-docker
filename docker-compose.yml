@@ -5,7 +5,7 @@ services:
     build: ./frontend
     container_name: gtt-frontend
     ports:
-      - "8423:80"
+      - "$Port:80"
     networks:
       - gtt-internal
   gtt-mariadb:

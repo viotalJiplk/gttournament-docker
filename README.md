@@ -1,6 +1,6 @@
 # gttournament-docker
-This is version of gttournament's website, but inside docker. It is easier to verify that it would run on host's machine and it can be started and shuted down  with one command.
-It does not mess on host. (usualy)
+This is version of gttournament's website, but inside docker. It is easier to verify that it would run on host's machine and it can be started and shutdown  with one command.
+It does not create mess on host. (usualy)
 
 ## Prerequisites
 You must have docker (with compose) installed. Most images are based on alpine so you should use linux as host.
