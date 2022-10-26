@@ -8,11 +8,12 @@ You must have docker (with compose) installed. Most images are based on alpine s
 ## Running it
 Clone this repository, rename a copy of .env-template, change secretPassword to something safe, and run:\
 `sudo docker compose build`\
-`sudo docker compose up -d`\
+`sudo docker compose up -d`
 
 By default you should be able to connect to it in your browser [http://localhost:8423](http://localhost:8423).
 
 ## Creating/recreating database
+If recreating/changing password Run `sudo docker volume rm gtt-docker_db-data`\
 RUN: `sudo docker container exec gtt-mariadb ./createdb.sh`\
 **Warning: This will delete all previous records!**
 
