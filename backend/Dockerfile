@@ -1,7 +1,7 @@
 FROM python:alpine
 
 RUN apk add --update --no-cache bash git
-RUN pip install flask gunicorn Flask-RESTful mysql-connector marshmallow
+RUN pip install flask gunicorn Flask-RESTful mysql-connector-python==8.0.29 marshmallow
 
 RUN mkdir /src
 RUN git clone "https://github.com/Vitond/gttournament-backend.git" /src
