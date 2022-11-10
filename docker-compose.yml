@@ -28,6 +28,7 @@ services:
       - gtt-internal
     environment:
       DBPass: "$DBPass"
+      EndOfReg: "$EndOfReg"
   gtt-adminer:
     image: adminer
     restart: $restart
